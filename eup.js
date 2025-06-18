@@ -1,7 +1,7 @@
 
       
       const firebaseConfig = {
-      apiKey: "AIzaSyD-9lbqpcLWy-OoYvYJxQgnNya9iQ620LI",
+      apiKey:import.meta.env.VITE_FIREBASE_API_KEY,
       authDomain: "mea-temp.firebaseapp.com",
       databaseURL: "https://mea-temp-default-rtdb.firebaseio.com",
       projectId: "mea-temp",
