@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--Bootstraps-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--pre-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Updater</title>
+    <meta name="description" content="Update school announcements easily with this form. Add title, description, images, and links.">
+    <!-- FIRST PARTY CSS -->
+    <link rel="stylesheet" href="assets/fonts.css">
+    <link rel="stylesheet" href="assets/darkmode.css">
+    <style>
+        body{
+            background-color: #dce9e8;
+            color: #121212;
+        }
+        @media (max-width:1381px) {
+            body{
+                text-align: center;
+            }
+        }
+        #pheader h1{
+            font-family: "Lexend Giga", sans-serif;
+            font-size: 3vw;
+            padding: 20px;
+            margin: 50px;
+        }
+        .in p, .in input{
+            font-size: large;
+            padding: 2.5px;
+            margin: 5px;
+        }
+        .in input{
+            width:100%;
+            border-radius: 9px;
+            border-width: 2px ;
+            border-color: rgba(0, 0, 0, 0.164);
+            border: ridge;
+        }
+        .in input.dark-mode{
+            background-color: #121212;
+        }
+        #description{
+            height: 100px;
+        }
+        #add{
+            padding:5px;
+            margin:5px;
+            background-color: #dce9e8;
+            color:#121212
+
+        }
+        #add.dark-mode{
+            background-color: #121212;
+            color:#dce9e8;
+        }
+
+       
+        #rlist{
+            font-size: x-large;
+            background-color: #121212;
+            color: #dce9e8;
+            padding: 10px;
+            margin: 50px;
+            transition: background-color 2s ease-in;
+            box-shadow: #dce9e885 1px 1px 10px;
+        }
+        #rlist i{
+            float: right;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .dark-mode input {
+        background-color: #1c1c1c;
+         color: #fff;
+        border: 1px solid #444;
+        box-shadow: #dce9e883 1px 1px 10px;
+}
+        #rlist span{
+            font-family: "Quicksand", sans-serif;
+            transition: display 0.3s;
+        }
+
+        .calendarEvents{
+            padding: 20px;
+            color: inherit;
+            margin:20px;
+            font-family: "Savate", sans-serif;
+            border-radius: 17px;
+            transition: background-color 0.6s;
+        }
+
+        .calendarEvents:hover{
+            background-color: #f35e44 !important;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <center>
+            <div id="pheader">
+                <h1>Announcements Updater</h1>
+                
+            </div>
+        </center>
+            <div class="in">
+                <p>
+                    Announcement Title
+                </p>
+                <input class="ain" id="title" type="text" placeholder="Announcement Title">
+            </div>
+        
+            <div class="in">
+                <p>
+                    Description
+                </p>
+                <input class="ain" id="description"  type="text" placeholder="Describe...">
+            </div>
+        
+            <div class="in">
+                <p>
+                    Link
+                </p>
+                <input class="ain" id="refer"  type="text" placeholder="Any Links">
+            </div>
+            <div class="in">
+                <p>
+                    Date
+                </p>
+                <input class="ain" id="date"  type="datetime-local" placeholder="Any Links">
+            </div>
+        
+            <div class="in">
+                <p>
+                    Image URL
+                </p>
+                <input class="ain" id="img1" type="text" placeholder="Image-1 (MIN)"><br>
+                <input class="ain" id="img2" type="text" placeholder="Image-2"><br>
+                <input class="ain" id="img3" type="text" placeholder="Image-3"><br>
+                <input class="ain" id="img4" type="text" placeholder="Image-4"><br>
+                <input class="ain" id="img5" type="text" placeholder="Image-5"><br>
+                <input class="ain" id="img6" type="text" placeholder="Image-6 (MAX)">
+            </div>
+            <center>
+                <button id="add" onclick="add()">
+                    ADD ANNOUNCEMENT
+                </button>
+            </center>
+    </div>
+
+    <div id="rdiv" class="container">
+        <div>
+            <center>
+                <div id="pheader">
+                <h1>Announcement Remover</h1>
+                </div>
+        </center>
+        </div>
+        <div id="r">
+
+    </div>
+
+
+    <div class="container">
+        <center>
+            <div id="pheader">
+                <h1>Calendar Updater</h1>
+            </div>
+            <div>
+                <div style="text-align: left;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="in">
+                  <p>
+                    Title
+                </p>
+                <input class="ain" id="calendarTitleInput" type="text" placeholder="Announcement Title">
+            </div>
+        
+            <div class="in">
+                <p>
+                    Description
+                </p>
+                <input class="ain" id="calendarDescriptionInput"  type="text" placeholder="Describe...">
+            </div>
+        
+            
+            <div class="in">
+                <p>
+                    Start Date
+                </p>
+                <input class="ain" id="calendarStartDateInput"  type="date" >
+            </div>
+            <div class="in">
+                <p>
+                    End Date
+                </p>
+                <input class="ain" id="calendarEndDateInput"  type="date" >
+            </div>
+            <div class="in">
+                <p>
+                    Colour
+                </p>
+                <input id="calendarColorInput"   type="color" value="#1de55b">
+
+                <br><br><br><br>
+                <button onclick="addCalendarEvents()" style="width: 100%;" id="add">
+                    Update
+                </button>
+            </div>
+                </div>
+
+                <div id="calendarEventHolder" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                    <div class="calendarEvents col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                        title: Hello World <br><br>
+                        start: 2025-06-01 <br><br>
+                        end: 2025-06-24 <br> <br>
+                    </div>
+                    <div class="calendarEvents col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                        title: Hello World <br><br>
+                        start: 2025-06-01 <br><br>
+                        end: 2025-06-24 <br><br>
+                       
+                    </div>
+                    <div class="calendarEvents col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                        title: Hello World <br><br>
+                        start: 2025-06-01 <br><br>
+                        end: 2025-06-24 <br><br>
+                    </div>
+                    <div class="calendarEvents col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                        title: Hello World <br><br>
+                        start: 2025-06-01 <br><br>
+                        end: 2025-06-24 <br><br>
+                       
+                    </div>
+
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+        // Apply dark mode classes based on saved preference
+        document.body.classList.toggle('dark-mode', isDarkMode);
+        const inputs = document.querySelectorAll("ain");
+        inputs.forEach(input => {
+        input.classList.toggle('dark-mode', isDarkMode);
+});
+
+        
+    });
+        </script>
+
+
+
+    <script type="text/javascript" src="js/eup.js"></script>
+    
+</body>
+</html>
