@@ -1,0 +1,18 @@
+.indiv{
+    font-size: 20px;
+    padding: 6px 22px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width:100%;
+    min-height:auto;
+    background-color: #4bafa0;
+    display: inline-block;
+    font-family: "Lexend Giga", sans-serif;
+    color: whitesmoke;
+    z-index: 12;
+    text-align: left;
+    box-shadow:#4bafa0 0.5px 0.5px 10px ;
+}
+.indiv i{
+    float: right;
+}

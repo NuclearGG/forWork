@@ -1,0 +1,29 @@
+/* For Large Screens */
+nav ul {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+  }
+  
+  /* For Small Screens (Mobile) */
+  @media (max-width: 768px) {
+nav ul {
+      display: block; /* Stack the items */
+      width: 100%;
+      text-align: center; /* Center-align the items */
+    }
+  
+    #dmtoggle {
+      margin: 10px 0;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Optionally, if you want to adjust logo size for mobile */
+    #logo50x50 {
+      width: 40px; /* Smaller logo for mobile */
+      height: 40px;
+    }
+  }
+  

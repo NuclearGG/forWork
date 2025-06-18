@@ -1,0 +1,146 @@
+/* Light Mode Styles */
+body {
+    background: #ffffff;
+    color: #000000;
+    transition: background 0.3s, color 0.3s;
+    transform: translateZ(0);
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+  }
+  #gheader.dark-mode{
+    color:#f1f650;
+    transition: color 0.3s;
+  }
+  #hheader.dark-mode{
+    color:#1699bd;
+    transition: color 0.3s;
+  }
+  #historydiv.dark-mode{
+    background:#121212;
+    transition: all 0.3s;
+  }
+  #htxt.dark-mode{
+    color:#1699bd;
+    transition: color 0.5s;
+  }
+  #gtxt.dark-mode{
+    color:#f1f650;
+    transition: color 0.3s;
+  }
+  #gpdiv.dark-mode{
+    background-color: #121212;
+    transition: background-color 0.3s,
+  }
+  #rlist.dark-mode{
+            
+    color: #121212 !important;
+    background-color: #dce9e8 !important;
+    transition: background-color 0.3s;
+    
+}
+#founder.dark-mode{
+  color: #298ac2 !important;;
+  background-color: #121212;
+  box-shadow: #298ac2 2.5px 2.5px 20px;
+  transition: all 0.3s;
+}
+#dean.dark-mode{
+  color: #45ace4 !important;;
+  background-color: #121212;
+  transition: all 0.3s;
+  box-shadow: #45ace4 2.5px 2.5px 20px;
+}
+#principal.dark-mode{
+  color:#4fa4e9 !important;;
+  background-color: #121212;
+  box-shadow: #4fa4e9 2.5px 2.5px 20px;
+  transition: all 0.3s;
+}
+#prefects.dark-mode{
+  color: #9acdf7 !important;;
+  background-color: #121212;
+  box-shadow: #9acdf7 2.5px 2.5px 20px;
+  transition: all 0.3s;
+}
+
+.rmore.dark-mode{
+  background-color: #121212 !important;
+  transition: all 0.3s;
+}
+
+#galmaincontent.dark-mode{
+  transition: all 0.5s;
+  background-color: #121212;
+  color:#30c2c5;
+  box-shadow:#30c3c580 1px 1px 100px;
+}
+
+#dmtoggle {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+  }
+  
+  .toggle-wrapper {
+    position: relative;
+    width: 60px;
+    height: 30px;
+  }
+  
+  .toggle {
+    width: 60px;
+    height: 30px;
+    background: #ffe600;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 10px #ffd700;
+    transition: background 0.5s;
+    position: relative;
+  }
+  #darkModeToggle{
+    display: none;
+  }
+  
+  .toggle .moon,
+  .toggle .sun {
+    position: absolute;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+  }
+  
+  /* Sun (default) */
+  .toggle .sun {
+    left: 8px;
+    background: #ffd700;
+  }
+  
+  /* Moon (hidden by default) */
+  .toggle .moon {
+    right: 8px;
+    background: #f1f1f1;
+    transform: scale(0);
+  }
+  
+  /* When dark mode is active */
+  #darkModeToggle:checked + .toggle {
+    background: #1e1e1e;
+    box-shadow: 0 0 10px #777;
+  }
+  
+  #darkModeToggle:checked + .toggle .sun {
+    transform: scale(0);
+  }
+  
+  #darkModeToggle:checked + .toggle .moon {
+    transform: scale(1);
+  }
+  

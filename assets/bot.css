@@ -1,0 +1,262 @@
+#chat-box {
+  overflow-y: auto;
+  min-height: 90vh;
+  max-height: 90vh;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  width: 70vw
+}
+
+    #chat-box::-webkit-scrollbar {
+      display: none;
+    }
+    input{
+      width: 60vw;
+      border-radius: 15px;
+      transition: all 0.3s;
+    }
+    #sbtn{transition: all 0.3s;}
+    #user-input.dark-mode{
+      background-color: #121212;
+      border: none;
+      box-shadow: #ffffff6c 1px 1px 10px;
+    }
+    #sbtn.dark-mode{
+      background-color: #121212;
+      border: none;
+      box-shadow: #ffffff6c 1px 1px 10px;
+    }
+.user-box {
+  background-color: rgb(30, 73, 165);
+  color: yellow;
+  padding: 8px 12px;
+  border-radius: 15px;
+  border-top-right-radius: 7px;
+  font-size: medium;
+  max-width: fit-content;
+  align-self: flex-end;
+  text-align: right;
+  width: 30%;
+  min-height: fit-content;
+}
+
+.bot-box {
+  background-color: rgb(30, 165, 82);
+  color: yellow;
+  padding: 8px 12px;
+  border-radius: 15px;
+  border-top-left-radius: 7px;
+  font-size: medium;
+  max-width: 30%;
+  min-height: fit-content;
+  align-self: flex-start;
+  text-align: left;
+  width: fit-content;
+}
+.audio-player {
+    background-color: rgb(30, 165, 82);
+    border-radius: 12px;
+    padding: 20px;
+    width: 30%; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top-left-radius: 0px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Play/Pause Button */
+.play-pause-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgb(30, 165, 82);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.play-pause-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%) rotate(0deg); /* Play icon (triangle) */
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    transition: transform 0.3s ease;
+}
+
+.play-pause-btn.playing::before {
+    /* Pause icon (two vertical bars) */
+    transform: translate(-50%, -50%) rotate(180deg);
+    width: 12px;
+    height: 15px;
+    border-top: none;
+    border-bottom: none;
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+.play-pause-btn:hover {
+    background-color: rgb(30, 165, 82);
+}
+
+
+/* Progress Bar */
+.progress-container {
+    flex-grow: 1; /* Takes available space */
+    position: relative;
+    height: 10px; /* Height of the actual bar */
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%; /* Will be controlled by JS */
+    background-color: #00bfff;
+    border-radius: 5px;
+}
+
+.seek-slider {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    -webkit-appearance: none; /* Remove default styling */
+    background: transparent; /* Make the actual slider track transparent */
+    cursor: pointer;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    top: 0;
+    left: 0;
+    z-index: 2; /* To be clickable over the progress bar */
+}
+
+/* Style for the slider thumb (the draggable part) */
+.seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007bff00;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    margin-top: -3px; /* Adjust to center vertically */
+}
+
+.seek-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007bff00;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the slider track (the line itself) - optional, as we have .progress-container */
+.seek-slider::-webkit-slider-runnable-track {
+    background: transparent;
+}
+.seek-slider::-moz-range-track {
+    background: transparent;
+}
+
+
+/* Time Display */
+.time-display {
+    font-size: 0.9em;
+    color: #555;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+
+/* Volume Control */
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mute-btn {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    font-size: 1.2em; /* For icon */
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.mute-btn::before {
+    content: '🔊'; /* Speaker icon */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mute-btn.muted::before {
+    content: '🔇'; /* Muted speaker icon */
+}
+
+.mute-btn:hover {
+    color: #007bff;
+}
+
+.volume-slider {
+    width: 80px; /* Adjust width for volume slider */
+    height: 8px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide the default audio element */
+audio {
+    display: none;
+}
+
+.ttsbtn{
+    cursor: pointer;
+}

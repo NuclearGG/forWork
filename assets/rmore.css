@@ -1,0 +1,96 @@
+body{
+    cursor:default;
+}
+
+#main_content{
+    margin:5vw;
+    min-height: fit-content;
+    padding: 50px;
+    margin-bottom: 50px;
+}
+.s{
+    padding: 12px;
+    margin: 29px;
+    margin-bottom: 100px;
+    
+}
+#fsp{
+    text-align: justify;
+    margin-top: 50px;
+    font-size: 25px; 
+    font-family: "Federo", sans-serif; 
+    margin-bottom: 50px;
+}
+#fsimg{
+    text-align: center;
+    margin-top: 10px;
+    height: 200px;
+}
+#fsimg img{
+    height: 150%;
+}
+h1{
+    font-family: "Federo", sans-serif;
+    font-size: 100px;
+    color:#115d9b
+}
+::selection{
+    background-color:#0c0c73;
+    color: white;
+}
+.pimg{
+    height: 300px;
+    margin: 50px;
+    width: auto;
+    border-radius: 18px;
+}
+#pimgdiv.dark-mode img{
+    box-shadow: white 0.5px 0.5px 10px;
+
+}
+table tr{
+    text-align: center;
+    padding:10px;
+}
+table tr td{
+    text-align: center;
+    padding-left:20px;
+    padding-right:20px;
+}
+table tr th{
+    text-align: center;
+    padding-left:20px;
+    padding-right:20px;
+}
+table th{
+    font-size: 25px; 
+    font-family: "Federo", sans-serif;
+}
+table td{
+    font-size: 25px; 
+    font-family: "Federo", sans-serif;
+}
+#gandhi{
+    color:#ffbf00;
+    letter-spacing: 5px;
+    font-variant: small-caps;
+    font-weight: 900;
+}
+#tagore{
+    color:#ff0000;
+    letter-spacing: 5px;
+    font-variant: small-caps;
+    font-weight: 900;
+}
+#netaji{
+    color:#1e03bd;
+    letter-spacing: 5px;
+    font-variant: small-caps;
+    font-weight: 900;
+}
+#cvraman{
+    color:#00b050;
+    letter-spacing: 5px;
+    font-variant: small-caps;
+    font-weight: 900;
+}

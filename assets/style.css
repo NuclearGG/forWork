@@ -1,0 +1,268 @@
+body{
+    text-align: center;
+    scroll-behavior: smooth;
+    color: #121212;
+}
+section {
+  width: 100%;
+  min-height: 100vh; /* Ensures every section takes full screen height */
+  box-sizing: border-box;
+  position: relative;
+
+}
+@media (max-width: 1381px){
+#svgtxt{
+    display: none;
+}
+#hmlogo{
+    margin-top:50% !important;
+
+    
+}
+#logo50x50{
+  max-height: 50px;
+}
+.wave{
+  position: relative;
+  margin-top: 200px;
+}
+}
+#hmdiv {  
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    z-index: 1; /* Make sure it's above the video */
+  }
+  
+#hmlogo {
+    z-index: 2; /* Ensure logo stays above text */
+    margin-top: -500px;
+    padding-bottom: 100px;
+  }
+#hmlogo img{
+    height: 200px;
+    width: auto;
+}
+#school-title {
+    margin-top: 20px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  #school-title svg {
+    width: 90%;
+    height: 300px;
+  }
+  @font-face {
+    font-family: 'headfont';
+    src: url(fonts/Monotype-Corsiva-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  svg text {
+    font-family: 'headfont', sans-serif;
+    fill: #ffffff;
+    font-size: 2vw;
+  }
+  
+  #school-title text:first-of-type {
+    font-size: 20px; /* Big for Modern English Academy */
+  }
+  
+  #school-title text:last-of-type {
+    font-size: 4vh; /* Smaller for For God and Country */
+  }
+  
+
+  /* SECTION 2 */
+  .affilation{
+    padding: 0 0;
+    margin: 0 0;
+    background-color: rgb(0, 183, 255);
+  }
+  .affilation div{
+    background-color: rgb(0, 183, 255);
+    font-family: "Tagesschrift", system-ui;
+    min-height: 10vh;
+    max-height: 11vh;
+    
+  }
+  .affilation a{
+    padding: 10px 20px;
+    padding-bottom: px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.7s ease;
+  }
+  .affilation a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.308);
+  }
+  
+
+  #hheader{
+    font-family: "Rubik Dirt", system-ui;
+    color:#121212;
+    padding: 10px;
+  }
+  #historydiv{
+    background-color: #1699bd;
+    margin: 20px;
+    border-radius: 20px;
+    max-width: 90vw;
+    text-align: left;
+    box-shadow: #1699bd8a 2.5px 2.5px 100px;
+  }
+  #htxt{
+    text-align: justify;
+    color:#121212;
+    font-family: "Quicksand", sans-serif;
+    font-size:large ;
+    padding: 10px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+
+  }
+  #himg{
+    text-align: center;
+    margin-top: 70px;
+  }
+
+#gpdiv{
+  background-color: #f1f650;
+  text-align: left;
+  left:5vw;
+  top:15vh;
+  line-height: 20px;
+  border-radius: 20px;
+  max-width: 90vw; 
+  padding: 30px; 
+  box-shadow: #f1f65070 2.5px 2.5px 100px;
+}
+#gtxt{
+  text-align: justify;
+  color:#121212;
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  padding: 10px;
+  padding-bottom: 30px;
+  padding-right: 20px;
+
+}
+#gheader{
+  font-family: "Rubik Dirt", system-ui;
+  color:#121212;
+  padding: 10px;
+}
+#aheader{
+  font-family: "Oxanium", sans-serif;
+  font-size: 5vw;
+  color:#4bafa0;
+}
+#chat-box{
+  min-height:200px;
+}
+
+#fpdmaindiv{
+margin: 20px;
+text-align: center;
+}
+
+
+#founder{background-color:#298ac2 ; color:#121212;}
+#dean{background-color:#45ace4 ;color:#121212;}
+#prefects{background-color: #9acdf7;color:#121212;}
+#principal{background-color: #4fa4e9;color:#121212;}
+@media (max-width:992px){
+  .pfdiv{
+    margin: 0px;
+    margin-top: 70px;
+  }
+}
+.pfdiv{
+  border-radius: 20px;
+  padding: 50px;
+  margin: 4vw;
+  min-height: 510px;
+  transition: transform 0.5s, z-index 0.5s;
+}
+.pfdiv:hover{
+  cursor: default;
+  transform: scale(1.1)!important;
+  z-index: 99;
+}
+#fpdh1{
+  
+  font-family: "Lilita One", sans-serif;
+}
+#fpdp{
+   font-family: "M PLUS 1 Code", monospace;
+   font-size: medium;
+   font-weight: 500;
+   
+}
+.rmore{
+  background-color: #2d9bd748;
+  border: outset #1699bd;
+  font-weight: 400;
+  font-family: "M PLUS 1 Code", monospace;
+  font-size: medium;
+  
+}
+
+
+
+#galmaincontent{
+  margin-left: 2vw;
+  border-radius: 10px;
+  background-color:#30c3c515;
+  padding: 20px;
+  max-width: 96%;
+}
+#glheader h1{
+  font-family: "Aref Ruqaa Ink", serif;
+  font-weight: 700;
+  font-size: 5em;
+  letter-spacing: 5px;
+}
+.ethumb{
+  transition: all 0.5s;
+}
+.ethumb img{
+  border-radius: 20px;
+}
+.zoominbtn{
+  position: relative;
+  z-index: 99;
+  height: 90%;
+  top: -90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color:rgba(255, 255, 255, 0);
+  transition: color 0.5s;
+  filter: brightness(100%)!important;
+  text-align: center;
+  cursor: crosshair;
+}
+#gallerydiv{
+  margin-top: 100px;
+  display: flex;  
+  justify-content: center
+}
+@media(max-width:1200px){
+  #gallerydiv{
+    text-align: center;
+  display: block;  
+}
+#gallery{
+  top: 233px;
+}
+}
+.glow-image {
+  transition: box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
